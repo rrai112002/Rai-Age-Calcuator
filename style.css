@@ -1,41 +1,100 @@
 body {
-    font-family:serif;
+    font-family: 'Arial', sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-color: #f6dfdf;
+    background: linear-gradient(135deg, rgb(14, 13, 13), rgb(227, 138, 160));
 }
 
 .container {
+    background-color: #f8efef;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    max-width: 350px;
+    width: 100%;
     text-align: center;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 5px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 24px;
+}
+
+label {
+    display: block;
+    margin: 15px 0 5px;
+    font-weight: bold;
+    color: #555;
 }
 
 input {
-    margin: 10px 0;
-    padding: 5px;
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
     font-size: 16px;
+    box-sizing: border-box;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+input:focus {
+    border-color: #f79;
 }
 
 button {
-    padding: 10px 20px;
+    padding: 12px 20px;
     font-size: 16px;
+    font-weight: bold;
     cursor: pointer;
-    background-color: #4CAF50;
+    background-color: rgb(14, 131, 66);
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
+    width: 100%;
+    transition: background-color 0.3s, transform 0.4s;
 }
 
 button:hover {
-    background-color: #45a049;
+    background-color: rgb(150, 127, 133);
 }
-#result
+
+button:active {
+    transform: scale(0.98);
+}
+
+p {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #333;
+    font-weight: bold;
+}
+/* #result
 {
-    color;
+    color: rgb(202, 22, 22);
+} */
+
+/* Add this to your existing CSS */
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    /* 100% { opacity: 1; } */
 }
+
+.blink {
+    animation: blink 1s ease-in-out infinite;
+}
+
+/* Add this to your existing CSS */
+.error {
+    color: red;
+    font-weight: bold;
+}
+
+

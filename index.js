@@ -1,9 +1,13 @@
 function calculateAge() {
     const birthdate = document.getElementById('birthdate').value;
     const currentdate = document.getElementById('currentdate').value;
+    const resultElement = document.getElementById('result');
+
+    resultElement.classList.remove('error', 'blink');
 
     if (!birthdate || !currentdate) {
         document.getElementById('result').textContent = 'Please enter both dates.';
+        resultElement.classList.add('error', 'blink');
         return;
     }
 
@@ -11,7 +15,8 @@ function calculateAge() {
     const currentDate = new Date(currentdate);
 
     if (currentDate < birthDate) {
-        document.getElementById('result').textContent = 'Yaaaarr, Sahi Date Toh Dallo';
+        resultElement.textContent = 'Yaaaarr, Sahi Date Toh Dallo';
+        resultElement.classList.add('error', 'blink');
         return;
     }
 
@@ -31,6 +36,19 @@ function calculateAge() {
         months += 12;
     }
 
-    document.getElementById('result').textContent = `Age: ${years} years, ${months} months, and ${days} days`;
-}
+    // const resultElement = document.getElementById('result');
+    resultElement.textContent = `Age: ${years} years, ${months} months, and ${days} days`;
 
+    // Add the blink class to trigger the animation
+    // resultElement.classList.add('blink');
+
+    // Remove the blink class after the animation to allow it to be retriggered
+    // setTimeout(() => {
+    //     resultElement.classList.remove('blink');
+    // }, 1000);
+
+
+    // resultElement.classList.remove('error');
+    // resultElement.classList.add('blink');
+    resultElement.classList.remove('error', 'blink');
+}
