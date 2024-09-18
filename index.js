@@ -11,7 +11,7 @@ function calculateAge() {
     const currentDate = new Date(currentdate);
 
     if (currentDate < birthDate) {
-        document.getElementById('result').textContent = 'Current date must be after birthdate.';
+        document.getElementById('result').textContent = 'Yaaaarr, Sahi Date Toh Dallo';
         return;
     }
 
